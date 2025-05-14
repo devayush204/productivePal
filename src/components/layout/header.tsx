@@ -3,6 +3,8 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import { Activity } from "lucide-react"; // Placeholder logo icon
+import { UserButton, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
@@ -19,7 +21,17 @@ export function Header() {
         </div>
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          {/* User avatar/menu would go here with Clerk */}
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button variant="ghost" size="sm">Sign In</Button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <Button size="sm">Sign Up</Button>
+            </SignUpButton>
+          </SignedOut>
         </div>
       </div>
     </header>
