@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useCallback } // Added useCallback
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { BaseWidget } from "./base-widget";
 import { Button } from "@/components/ui/button";
 import { getMotivationalQuote, type MotivationalQuoteOutput } from "@/ai/flows/motivational-quote";
