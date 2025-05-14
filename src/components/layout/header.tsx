@@ -22,7 +22,7 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <SignedIn>
-            <UserButton afterSignOutUrl="/" />
+            <UserButton afterSignOutUrl="/landing" />
           </SignedIn>
           <SignedOut>
             <SignInButton mode="modal">
